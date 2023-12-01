@@ -98,7 +98,7 @@ class DriverCacheManager(object):
         os_type = self.get_os_type()
         driver_name = driver.get_name()
         browser_type = driver.get_browser_type()
-        browser_version = self._os_system_manager.get_browser_version_from_os(browser_type)
+        browser_version = driver.get_browser_version_from_os()
         if not browser_version:
             return None
 
