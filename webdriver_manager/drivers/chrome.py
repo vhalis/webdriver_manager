@@ -16,7 +16,8 @@ class ChromeDriver(Driver):
             latest_release_url,
             http_client,
             os_system_manager,
-            chrome_type=ChromeType.GOOGLE
+            chrome_type=ChromeType.GOOGLE,
+            browser_version=None
     ):
         super(ChromeDriver, self).__init__(
             name,
@@ -24,7 +25,8 @@ class ChromeDriver(Driver):
             url,
             latest_release_url,
             http_client,
-            os_system_manager
+            os_system_manager,
+            browser_version=browser_version
         )
         self._browser_type = chrome_type
 

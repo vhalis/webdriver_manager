@@ -12,7 +12,8 @@ class EdgeChromiumDriver(Driver):
             url,
             latest_release_url,
             http_client,
-            os_system_manager
+            os_system_manager,
+            browser_version=None
     ):
         super(EdgeChromiumDriver, self).__init__(
             name,
@@ -20,7 +21,8 @@ class EdgeChromiumDriver(Driver):
             url,
             latest_release_url,
             http_client,
-            os_system_manager
+            os_system_manager,
+            browser_version=browser_version
         )
 
     def get_stable_release_version(self):

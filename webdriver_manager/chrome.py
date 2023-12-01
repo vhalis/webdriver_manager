@@ -19,7 +19,8 @@ class ChromeDriverManager(DriverManager):
             chrome_type: str = ChromeType.GOOGLE,
             download_manager: Optional[DownloadManager] = None,
             cache_manager: Optional[DriverCacheManager] = None,
-            os_system_manager: Optional[OperationSystemManager] = None
+            os_system_manager: Optional[OperationSystemManager] = None,
+            browser_version: Optional[str] = None
     ):
         super().__init__(
             download_manager=download_manager,
@@ -35,7 +36,8 @@ class ChromeDriverManager(DriverManager):
             latest_release_url=latest_release_url,
             chrome_type=chrome_type,
             http_client=self.http_client,
-            os_system_manager=os_system_manager
+            os_system_manager=os_system_manager,
+            browser_version=browser_version
         )
 
     def install(self) -> str:

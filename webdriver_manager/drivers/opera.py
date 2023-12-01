@@ -11,7 +11,8 @@ class OperaDriver(Driver):
             latest_release_url,
             opera_release_tag,
             http_client,
-            os_system_manager
+            os_system_manager,
+            browser_version=None
     ):
         super(OperaDriver, self).__init__(
             name,
@@ -19,7 +20,8 @@ class OperaDriver(Driver):
             url,
             latest_release_url,
             http_client,
-            os_system_manager
+            os_system_manager,
+            browser_version=browser_version
         )
         self.opera_release_tag = opera_release_tag
 

@@ -11,12 +11,13 @@ class Driver(object):
             url,
             latest_release_url,
             http_client,
-            os_system_manager):
+            os_system_manager,
+            browser_version=None):
         self._name = name
         self._url = url
         self._latest_release_url = latest_release_url
         self._http_client = http_client
-        self._browser_version = None
+        self._browser_version = browser_version
         self._driver_version_to_download = driver_version_to_download
         self._os_system_manager = os_system_manager
         if not self._os_system_manager:

@@ -12,7 +12,8 @@ class IEDriver(Driver):
             latest_release_url,
             ie_release_tag,
             http_client,
-            os_system_manager
+            os_system_manager,
+            browser_version=None
     ):
         super(IEDriver, self).__init__(
             name,
@@ -20,7 +21,8 @@ class IEDriver(Driver):
             url,
             latest_release_url,
             http_client,
-            os_system_manager
+            os_system_manager,
+            browser_version=browser_version
         )
         self._ie_release_tag = ie_release_tag
         # todo: for 'browser_version' implement installed IE version detection

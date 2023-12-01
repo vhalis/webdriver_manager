@@ -19,7 +19,8 @@ class IEDriverManager(DriverManager):
             ie_release_tag: str = "https://api.github.com/repos/seleniumhq/selenium/releases/tags/selenium-{0}",
             download_manager: Optional[DownloadManager] = None,
             cache_manager: Optional[DriverCacheManager] = None,
-            os_system_manager: Optional[OperationSystemManager] = None
+            os_system_manager: Optional[OperationSystemManager] = None,
+            browser_version: Optional[str] = None
     ):
         super().__init__(
             download_manager=download_manager,
@@ -33,7 +34,8 @@ class IEDriverManager(DriverManager):
             latest_release_url=latest_release_url,
             ie_release_tag=ie_release_tag,
             http_client=self.http_client,
-            os_system_manager=os_system_manager
+            os_system_manager=os_system_manager,
+            browser_version=browser_version
         )
 
     def install(self) -> str:
