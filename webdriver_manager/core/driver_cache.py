@@ -65,11 +65,15 @@ class DriverCacheManager(object):
         if len(files) == 1:
             return files[0]
 
+        possible_files = []
         for f in files:
-            if 'LICENSE' in f:
-                continue
-            if driver_name in f:
-                return f
+            base_name = os.path.basename(f)
+            filename, file_extension = os.path.splitext(base_name)
+            if driver_name in filename and file_extension not in ['.dll', '.pak', '.dat', '.json']:
+                possible_files.append(f)
+        # Sort by length to get the shortest filename
+        if possible_files:
+            return sorted(possible_files, key=lambda x: len(x))[0]
 
         raise Exception(f"Can't find binary for {driver_name} among {files}")
 

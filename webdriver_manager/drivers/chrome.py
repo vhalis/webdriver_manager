@@ -84,7 +84,7 @@ class ChromeDriver(Driver):
             if compatible_versions:
                 latest_version = compatible_versions[-1]
                 log(f"WebDriver version {latest_version['version']} selected")
-                downloads = latest_version["downloads"]["chromedriver"]
+                downloads = latest_version["downloads"][self.get_name()]
                 for d in downloads:
                     if d["platform"] == platform:
                         return d["url"]
